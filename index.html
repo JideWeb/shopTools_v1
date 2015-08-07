@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" >
+  <meta name="applicable-device" content="pc"/>
+  <meta name="keywords" content="Jide web, Remix" />
+  <meta name="format-detection" content="telephone=no" />
+  <title> 技德WebTeam </title>
+  <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+  <link href="css/reset.css" rel="stylesheet" type="text/css">
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+  <link href="util/util.css" rel="stylesheet" type="text/css">
+  <script src="lib/jquery-1.11.2.min.js"></script>
+  <script src="util/util.input.js"></script>
+  <script src="util/util.popAlert.js"></script>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="title">
+      <span>Jide Web 页面仔</span>
+    </div>
+    <div class="box">
+      <h1>按钮示例</h1>
+      <p>使用时，class名“btn-primary”是必要的，同时可根据需求使用其他class名订制特别款式。</p>
+      <p>如需要按钮根据页面布局来自适应宽度，请先自定义一个容器，再将按钮填充进去，并使用“btn-flex100”的class名。</p>
+      <a class="btn-primary">基本款</a>
+      <a class="btn-primary btn-blank">空心款</a>
+      <a class="btn-primary btn-red">操作失败</a>
+      <a class="btn-primary btn-green">操作成功</a>
+      <a class="btn-primary btn-grey">已过期</a>
+      <a class="btn-primary btn-long120">大宽度 更多字</a>
+      <a class="btn-primary btn-long150 btn-disabled">也是大宽度 不可点</a>
+      <a class="btn-primary btn-long180 btn-red">既是大宽度 又是红色款</a>
+      <a class="btn-primary btn-short50 btn-green">小</a>
+      <div class="special">
+        <p>两个自适应容器宽度的按钮，90%和100%.</p>
+        <p>(容器自己内含padding值)</p>
+        <a class="btn-primary btn-green btn-flex90">我自适应90%</a>
+        <a class="btn-primary btn-blank btn-flex100">我自适应100%</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>弹窗示例</h1>
+      <p>使用时new一个popAlert对象然后使用Alert方法即可渲染出来了。</p>
+      <p>内容区域可以只定义纯文本，也可以自定义一段HTML带标签的结构放进去，结构的样式另行定义。</p>
+      <p>可以自定义使其显示一个按钮，或者同时显示两个按钮。各有自己的回调可以自定义。</p>
+      <a class="btn-primary btn-red btn-long120 J_makeAPop box-click">点我试试哦</a>
+    </div>
+
+    <div class="box">
+      <h1>输入框示例</h1>
+      <p>输入框可自定义长度或指定其自适应父容器的宽度。</p>
+      <p>输入框渲染后自带验证，其validation属性返回true时是验证通过，通过后才能获取到其value属性的值。</p>
+      <p>new了之后先赋值给页面的变量，再renderTo到指定的容器里。</p>
+      <a class="btn-primary btn-green btn-long150 J_makeAInput box-click">点我弄个输入框</a>
+      <div class="special J_inputDiv">
+        <p>这是一个准备放置input框的容器</p>
+      </div>
+      <div class="special">
+        <a class="btn-primary J_checkInput box-click">验证输入框</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Jide WebTeam All rights Reserved. 2015.</p>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
