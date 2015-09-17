@@ -1,5 +1,5 @@
 /*
-  util.css, latest modified 2015-08-07 12:23
+  util.css, latest modified 2015-09-14 11:39
 */
 
 /* ------------ css for input ----------- */
@@ -54,13 +54,22 @@
 }
 
 /* ------------ css for popAlert ----------- */
+.U_warningContainer {
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.2);
+  background: none\9;
+}
 .U_Warning {
-  position: fixed!important;
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -155px;
   margin-left: -255px;
-  z-index: 100;
   padding: 120px 0 20px;
   width: 510px;
   min-height: 100px;
@@ -157,8 +166,17 @@
 .btn-primary.btn-flex90 {
   width: 90%;
 }
+.btn-primary.btn-flex50 {
+  width: 50%;
+}
+.btn-primary.btn-flex45 {
+  width: 45%;
+}
 .btn-primary.btn-long120 {
   width: 120px;
+}
+.btn-primary.btn-long144 {
+  width: 144px;
 }
 .btn-primary.btn-long150 {
   width: 150px;
@@ -174,6 +192,9 @@
 }
 .btn-primary.btn-short30 {
   width: 30px;
+}
+.btn-center {
+  margin: 0 auto;
 }
 
 /* different looks for button */

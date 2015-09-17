@@ -1,5 +1,5 @@
 /*
-  util.popAlert.js, latest modified 2015-08-06 16:12
+  util.popAlert.js, latest modified 2015-09-14 12:03
 */
 
 var popAlert = function( options ) {
@@ -29,14 +29,17 @@ var popAlert = function( options ) {
 
 popAlert.prototype.Alert = function() {
   var imAlert = this;
-  var tmpl = '<div class="U_Warning '+ this.style +' '+ this.clsName +'" id="U_Warning_'+ this.id +'">\
-                <div class="U_warningBtns clearfix">\
-                  <a class="U_btnConfirm btn-primary '+ this.btns[0].className +'">'+ this.btns[0].text +'</a>\
+  var tmpl = '<div class="U_warningContainer">\
+                <div class="U_Warning '+ this.style +' '+ this.clsName +'" id="U_Warning_'+ this.id +'">\
+                  <div class="U_warningBtns clearfix">\
+                    <a class="U_btnConfirm btn-primary '+ this.btns[0].className +'">'+ this.btns[0].text +'</a>\
+                  </div>\
                 </div>\
               </div>';
   var existedPopAlert = $("body").find(".U_Warning"); // Searching if there is an existed popAlert
-  if( !existedPopAlert.length ){ // Only when there is no existed popAlert that could we make a popAlert.
+  if( !existedPopAlert.length ){ // Only when there is no existed popAlert that could we make a new popAlert.
     $("body").prepend( $(tmpl) );
+    var U_warnContainer = $(".U_warningContainer");
     var U_Warn = $(".U_Warning");
     if( this.width ){
       U_Warn.css({
@@ -58,7 +61,7 @@ popAlert.prototype.Alert = function() {
       if( imAlert.btns[0].handler ){
         imAlert.btns[0].handler();
       };
-      U_Warn.remove();
+      U_warnContainer.remove();
     });
     if( this.btns[1] && this.btns[1].text ){ // If you need a second button
       $(".U_warningBtns").append( '<a class="U_btnCancel btn-primary btn-blank '+ this.btns[1].className +'">'+ this.btns[1].text +'</a>' );
@@ -66,7 +69,7 @@ popAlert.prototype.Alert = function() {
         if( imAlert.btns[1].handler ){
           imAlert.btns[1].handler();
         }
-        U_Warn.remove();
+        U_warnContainer.remove();
       });
       $(".U_btnConfirm").addClass("fl");
       $(".U_btnCancel").addClass("fr");
@@ -95,6 +98,7 @@ function makePopAlert( txt, type, btnText, callback, secondBtnText, secBtnCallba
     style: (type==1)?'congrates':'warning',
     btns: [{
         text: btnText,
+        className: 'U_J_SUC',
         handler: (callback)?callback:''
       }]
   };
